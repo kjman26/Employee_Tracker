@@ -152,3 +152,25 @@ function departmentPrompt(departmentChoices) {
     });
 }
 
+function addNewEmployee() {
+    console.log("Adding Employee")
+
+    var query =
+    `SELECT r.id, r.title, r.salary 
+    FROM role r`
+
+connection.query(query, function (err, res) {
+  if (err) throw err;
+
+  const roleOptions = res.map(({ id, title, salary }) => ({
+    value: id, title: `${title}`, salary: `${salary}`
+  }));
+
+  console.table(res);
+  console.log("Insert Role");
+
+  promptInsert(roleOptions);
+});
+}
+
+function 
