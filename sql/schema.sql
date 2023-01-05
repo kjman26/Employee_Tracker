@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS employeeDB;
 
 CREATE DATATBASE employeeDB;
 
+USE employeeDB;
+
 CREATE TABLE department (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR (30) NULL,
